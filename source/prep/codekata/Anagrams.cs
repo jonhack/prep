@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using prep.utility;
 
 namespace prep.codekata
 {
@@ -7,7 +9,7 @@ namespace prep.codekata
         private string Filename = "c:\\course\\prep\\words.txt";
         public string[] WordList;
 
-        public Anagrams()
+        public Anagrams(string fi)
         {
             ReadFileToWordList();
         }
@@ -15,6 +17,11 @@ namespace prep.codekata
         public void ReadFileToWordList()
         {
             WordList = File.ReadAllLines(Filename);
+        }
+
+        public int count_of_all_words()
+        {
+            return WordList.Count();
         }
     }
 }
